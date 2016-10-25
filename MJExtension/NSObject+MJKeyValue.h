@@ -21,16 +21,9 @@
  */
 + (NSArray *)mj_allowedPropertyNames;
 
-/**
- *  这个数组中的属性名将会被忽略：不进行字典和模型的转换
- */
+
 + (NSArray *)mj_ignoredPropertyNames;
 
-/**
- *  将属性名换为其他key去字典中取值
- *
- *  @return 字典中的key是属性名，value是从字典中取值用的key
- */
 + (NSDictionary *)mj_replacedKeyFromPropertyName;
 
 /**
@@ -47,13 +40,7 @@
  */
 + (NSDictionary *)mj_objectClassInArray;
 
-/**
- *  旧值换新值，用于过滤字典中的值
- *
- *  @param oldValue 旧值
- *
- *  @return 新值
- */
+
 - (id)mj_newValueFromOldValue:(id)oldValue property:(MJProperty *)property;
 
 /**
@@ -93,22 +80,6 @@
  */
 - (instancetype)mj_setKeyValues:(id)keyValues context:(NSManagedObjectContext *)context;
 
-/**
- *  将模型转成字典
- *  @return 字典
- */
-- (NSMutableDictionary *)mj_keyValues;
-- (NSMutableDictionary *)mj_keyValuesWithKeys:(NSArray *)keys;
-- (NSMutableDictionary *)mj_keyValuesWithIgnoredKeys:(NSArray *)ignoredKeys;
-
-/**
- *  通过模型数组来创建一个字典数组
- *  @param objectArray 模型数组
- *  @return 字典数组
- */
-+ (NSMutableArray *)mj_keyValuesArrayWithObjectArray:(NSArray *)objectArray;
-+ (NSMutableArray *)mj_keyValuesArrayWithObjectArray:(NSArray *)objectArray keys:(NSArray *)keys;
-+ (NSMutableArray *)mj_keyValuesArrayWithObjectArray:(NSArray *)objectArray ignoredKeys:(NSArray *)ignoredKeys;
 
 #pragma mark - 字典转模型
 /**

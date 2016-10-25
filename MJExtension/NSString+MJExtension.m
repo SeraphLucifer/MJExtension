@@ -9,23 +9,6 @@
 #import "NSString+MJExtension.h"
 
 @implementation NSString (MJExtension)
-- (NSString *)mj_underlineFromCamel
-{
-    if (self.length == 0) return self;
-    NSMutableString *string = [NSMutableString string];
-    for (NSUInteger i = 0; i<self.length; i++) {
-        unichar c = [self characterAtIndex:i];
-        NSString *cString = [NSString stringWithFormat:@"%c", c];
-        NSString *cStringLower = [cString lowercaseString];
-        if ([cString isEqualToString:cStringLower]) {
-            [string appendString:cStringLower];
-        } else {
-            [string appendString:@"_"];
-            [string appendString:cStringLower];
-        }
-    }
-    return string;
-}
 
 - (NSString *)mj_camelFromUnderline
 {
